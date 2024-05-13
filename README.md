@@ -37,3 +37,7 @@ This corpus has been collected from free or free for research sources at the Int
 - Matplotlib (Data Visualization)
 - Scikit-learn (Machine Learning Model)
 - Streamlit (Web Application)
+
+## Contact
+- LinkedIn : https://www.linkedin.com/in/anubhav-yadav-srm/
+- Email : anubhavyadav77ff@gmail.com
