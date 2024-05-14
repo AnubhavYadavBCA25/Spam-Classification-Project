@@ -17,7 +17,7 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-    name='Spam Classification',
+    name='Spam Classification Project',
     version='0.0.1',
     author='Anubhav Yadav',
     author_email='ay6666@srmist.edu.in',
