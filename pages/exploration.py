@@ -10,6 +10,9 @@ st.set_page_config(
     page_icon="🔍",
 )
 
+st.markdown("# Data Exploration")
+st.sidebar.header("Data Exploration")
+
 def main():
     st.title("🔍 Data Exploration")
     st.divider()

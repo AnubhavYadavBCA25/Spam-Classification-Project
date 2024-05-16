@@ -5,6 +5,8 @@ st.set_page_config(
     page_icon="👋",
 )
 
+st.sidebar.success("Select a demo above.")
+
 def main():
     st.title("✉️ Spam Classification Project")
     st.divider()
