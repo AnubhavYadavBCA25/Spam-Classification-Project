@@ -10,14 +10,13 @@ st.set_page_config(
     page_icon="🔍",
 )
 
-st.markdown("# Data Exploration")
 st.sidebar.header("Data Exploration")
 
 def main():
     st.title("🔍 Data Exploration")
     st.divider()
 
-    st.header("Data Overview 📊")
+    st.header("Data Overview 📊", divider='rainbow')
     st.write("Let's start by exploring the dataset contents.")
     
     # Load the dataset
@@ -29,29 +28,33 @@ def main():
     st.dataframe(df, width=800, height=400)
     st.divider()
     
-    st.header("Data Visualization 📊")
+    st.header("Data Visualization 📊", divider='rainbow')
     st.write("Let's visualize the dataset to gain more insights.")
     
     # Plot histogram of message lengths
     fig = px.histogram(df, x="length", title="Distribution of Message Lengths")
     st.plotly_chart(fig)
+    st.divider()
 
     # Plot histogram of message lengths by label
     fig = px.histogram(df, x="length", color="label", title="Distribution of Message Lengths by Label", color_discrete_map={'ham':'blue', 'spam':'red'})
     st.plotly_chart(fig)
+    st.divider()
 
     # Plot pie chart of label distribution
     fig = px.pie(df, names="label", title="Label Distribution")
     st.plotly_chart(fig)
+    st.divider()
     
-    # # Generate word cloud of spam messages
+    # Generate word cloud of spam messages
     spam_messages = " ".join(df[df["label"] == "spam"]["message"].values)
     wordcloud = WordCloud(width=800, height=400, background_color ='white').generate(spam_messages)
     
     # Display word cloud
     st.write("Word Cloud of Spam Messages")
     st.image(wordcloud.to_array(), caption="Word Cloud of Spam Messages")
-    
+    st.divider()
+
     # Generate word cloud of ham messages
     ham_messages = " ".join(df[df["label"] == "ham"]["message"].values)
     wordcloud = WordCloud(width=800, height=400, background_color ='white').generate(ham_messages)
@@ -59,6 +62,15 @@ def main():
     # Display word cloud
     st.write("Word Cloud of Ham Messages")
     st.image(wordcloud.to_array(), caption="Word Cloud of Ham Messages")
+    st.divider()
+
+    st.header("Conclusion 🎯", divider='rainbow')
+    st.write("""
+    - The dataset contains 5,572 messages labeled as spam or ham.
+    - The distribution of message lengths varies between spam and ham messages.
+    - The dataset contains more ham messages than spam messages.
+    - The word clouds provide a visual representation of the most frequent words in spam and ham messages.
+    """)
 
 if __name__ == "__main__":
     main()
