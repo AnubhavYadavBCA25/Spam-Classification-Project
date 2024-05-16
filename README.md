@@ -38,6 +38,12 @@ This corpus has been collected from free or free for research sources at the Int
 - Scikit-learn (Machine Learning Model)
 - Streamlit (Web Application)
 
+## Step By Step Project Overview:
+1. Setup your 'venv', 'setup.py' file and 'requirements.txt' file.
+2. Create a 'notebooks' folder which consist your all analysis and predict model stuff.
+3. Perform EDA on your dataset (spam.csv): exploration, text preprocessing, visualization and at last save your cleaned or preprocessed dataset in data folder.
+4. Perform model training on your 'cleaned dataset' like: data spliting, vectorization using tf-idf, training and evaluating different models, selecting best performing model based on 'accuracy score', perform model test on unseen or new data and at the last save final best model 'model.pkl' file and vectorizer 'tfidf.pkl' file in artifact folder.
+
 ## Contact
 - LinkedIn : https://www.linkedin.com/in/anubhav-yadav-srm/
 - Email : anubhavyadav77ff@gmail.com
