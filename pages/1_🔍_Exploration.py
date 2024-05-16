@@ -34,16 +34,19 @@ def main():
     # Plot histogram of message lengths
     fig = px.histogram(df, x="length", title="Distribution of Message Lengths")
     st.plotly_chart(fig)
+    st.write("Conclusion: The distribution of message lengths varies between spam and ham messages. Spam messages tend to be shorter than ham messages.")
     st.divider()
 
     # Plot histogram of message lengths by label
     fig = px.histogram(df, x="length", color="label", title="Distribution of Message Lengths by Label", color_discrete_map={'ham':'blue', 'spam':'red'})
     st.plotly_chart(fig)
+    st.write("Conclusion: Ham messages tend to be longer than spam messages.")
     st.divider()
 
     # Plot pie chart of label distribution
     fig = px.pie(df, names="label", title="Label Distribution")
     st.plotly_chart(fig)
+    st.write("Conclusion: The dataset contains more ham messages than spam messages.")
     st.divider()
     
     # Generate word cloud of spam messages
@@ -70,6 +73,7 @@ def main():
     - The distribution of message lengths varies between spam and ham messages.
     - The dataset contains more ham messages than spam messages.
     - The word clouds provide a visual representation of the most frequent words in spam and ham messages.
+    - Further analysis and modeling can be performed to classify messages as spam or ham.
     """)
 
 if __name__ == "__main__":
