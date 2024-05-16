@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import nltk
-import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -56,9 +55,10 @@ def main():
             st.error("This message is classified as Spam. 🚫")
         else:
             st.success("This message is classified as Ham. ✅")
+    st.divider()
 
     # Note
-    st.subheader("*Please Note:*")
+    st.subheader("⚠️Please Note:")
     st.write("1. The model was trained on the SMS Spam Collection dataset, which contains 5,574 English SMS messages labeled as spam or ham.")
     st.write("2. Number of Spam Messages: 747 (13.4%) | Number of Ham Messages: 4,827 (86.6%).")
     st.write("3. Because of the limitations of the dataset, the model may not be accurate for all messages.")
