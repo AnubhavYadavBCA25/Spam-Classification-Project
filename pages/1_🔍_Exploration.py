@@ -20,12 +20,41 @@ def main():
     st.write("Let's start by exploring the dataset contents.")
     
     # Load the dataset
-    df = pd.read_csv("notebooks/data/spam.csv", encoding="ISO-8859-1")
+    # df = pd.read_csv("notebooks/data/spam.csv", encoding="ISO-8859-1")
+    # df = df.drop(columns=["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"], axis=1)
+    # df.columns = ["label", "message"]
+    # df['length'] = df['message'].apply(len)
+    # # Display the dataset
+    # st.dataframe(df)
+
+    # Function to read CSV file with specified encoding
+    def load_data(file_path):
+        try:
+            data = pd.read_csv(file_path, encoding="ISO-8859-1")
+            return data
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
+            return None
+
+    # Load data (replace 'your_file.csv' with your actual file path)
+    file_path = 'notebooks/data/spam.csv'
+    df = load_data(file_path)
     df = df.drop(columns=["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"], axis=1)
     df.columns = ["label", "message"]
     df['length'] = df['message'].apply(len)
-    # Display the dataset
-    st.dataframe(df)
+    df_display = df.copy()
+
+    if df_display is not None:
+        # Truncate long text for better mobile display
+        df_display['message'] = df_display['message'].apply(lambda x: x if len(x) <= 50 else x[:47] + '...')
+
+        # Display the dataset
+        st.dataframe(df_display)
+
+        # Optionally, use st.table for static data display
+        # st.table(df)
+    else:
+        st.write("No data to display.")
     st.divider()
     
     st.header("Data Visualization 📊", divider='rainbow')
