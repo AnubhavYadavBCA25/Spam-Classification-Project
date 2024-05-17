@@ -5,8 +5,9 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 import joblib
-import mysql.connector
-from mysql.connector import Error
+
+# import mysql.connector
+# from mysql.connector import Error
 
 # Set page title and icon
 st.set_page_config(
@@ -15,29 +16,33 @@ st.set_page_config(
 )
 st.sidebar.header("Prediction")
 
-# Function to create a connection to the database
-def create_connection():
-    try:
-        connection = mysql.connector.connect(
-            host='localhost',
-            port=3306,
-            user='root',
-            password='Anubhav@2023?',  # Replace with your MySQL root password
-            database='spam_classifier'
-        )
-        if connection.is_connected():
-            st.success("Successfully connected to the database")
-        return connection
-    except Error as e:
-        st.write(f"Error: '{e}'")
-        return None
+# ======================================================================================#
 
-def insert_input(connection, input_text, prediction):
-    cursor = connection.cursor()
-    prediction_str = str(prediction)
-    query = "INSERT INTO user_inputs (input_text, prediction) VALUES (%s, %s)"
-    cursor.execute(query, (input_text, prediction_str))
-    connection.commit()
+# # Function to create a connection to the database
+# def create_connection():
+#     try:
+#         connection = mysql.connector.connect(
+#             host='your_host',
+#             port='your_port',
+#             user='your_root',
+#             password='your_password',  # Replace with your MySQL root password
+#             database='your_database'
+#         )
+#         if connection.is_connected():
+#             st.success("Successfully connected to the database")
+#         return connection
+#     except Error as e:
+#         st.write(f"Error: '{e}'")
+#         return None
+
+# def insert_input(connection, input_text, prediction):
+#     cursor = connection.cursor()
+#     prediction_str = str(prediction)
+#     query = "INSERT INTO user_inputs (input_text, prediction) VALUES (%s, %s)"
+#     cursor.execute(query, (input_text, prediction_str))
+#     connection.commit()
+
+# ======================================================================================#
 
 # Function to preprocess text data
 def preprocess_text(text):
@@ -73,7 +78,8 @@ def main():
 
     if st.button("Classify"):
         # Original message stored for database
-        original_message = message
+        # original_message = message
+
         # Preprocess the message
         message = preprocess_text(message)
         # Vectorize the message
@@ -86,13 +92,18 @@ def main():
         else:
             st.success("This message is classified as Ham. ✅")
         st.divider()
-        # Connect to the database and insert the input and prediction
-        connection = create_connection()
-        if connection:
-            insert_input(connection, original_message, prediction)
-            connection.close()
-            st.success("Input and prediction have been stored in the database.")
-    st.divider()
+        
+# ======================================================================================#
+
+    #     # Connect to the database and insert the input and prediction
+    #     connection = create_connection()
+    #     if connection:
+    #         insert_input(connection, original_message, prediction)
+    #         connection.close()
+    #         st.success("Input and prediction have been stored in the database.")
+    # st.divider()
+
+# ======================================================================================#
 
     # Note
     st.subheader("⚠️Please Note:")
