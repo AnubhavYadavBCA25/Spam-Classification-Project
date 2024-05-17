@@ -52,7 +52,8 @@ def main():
     st.divider()
 
     st.header("Explore the App 🚀")
-    st.write("To get started with classifying your own messages, please navigate to the prediction page.")
+    st.write("""To get started with classifying your own messages, please navigate to the prediction page.
+             Link of the Prediction Page: https://spam-classification-project.streamlit.app/Prediction""")
     st.divider()
 
     st.header("About Me 🙋‍♂️")
