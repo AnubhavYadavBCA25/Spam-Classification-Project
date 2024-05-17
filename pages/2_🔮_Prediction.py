@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 import joblib
+nltk.download('punkt')
 
 # import mysql.connector
 # from mysql.connector import Error
