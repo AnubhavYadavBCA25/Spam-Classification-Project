@@ -25,7 +25,7 @@ def main():
     df.columns = ["label", "message"]
     df['length'] = df['message'].apply(len)
     # Display the dataset
-    st.dataframe(df, width=800, height=400)
+    st.dataframe(df)
     st.divider()
     
     st.header("Data Visualization 📊", divider='rainbow')
