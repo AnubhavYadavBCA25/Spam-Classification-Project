@@ -8,3 +8,4 @@ plotly
 wordcloud
 nltk
 joblib
+mysql-connector-python

@@ -48,7 +48,7 @@ def main():
     - TF-IDF: For text vectorization.         
     - Streamlit: For building the interactive web application.
     - scikit-learn: For machine learning model training and evaluation.
-    - MySQL: For storing user inputs and their classifications.""")
+    - MySQL: For storing user inputs and their classifications. (Optional)""")
     st.divider()
 
     st.header("Explore the App 🚀")
