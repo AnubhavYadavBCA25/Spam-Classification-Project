@@ -18,14 +18,6 @@ def main():
 
     st.header("Data Overview 📊", divider='rainbow')
     st.write("Let's start by exploring the dataset contents.")
-    
-    # Load the dataset
-    # df = pd.read_csv("notebooks/data/spam.csv", encoding="ISO-8859-1")
-    # df = df.drop(columns=["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"], axis=1)
-    # df.columns = ["label", "message"]
-    # df['length'] = df['message'].apply(len)
-    # # Display the dataset
-    # st.dataframe(df)
 
     # Function to read CSV file with specified encoding
     def load_data(file_path):
