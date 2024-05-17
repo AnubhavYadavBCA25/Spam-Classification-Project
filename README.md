@@ -30,19 +30,29 @@ This corpus has been collected from free or free for research sources at the Int
 - PyCharm : Data Analysis, ML Modelling and Web App. Development (Prefered)
 - Jupyter Notebook : Analysis and ML Modelling, But, not for Web App. Develpoment
 - Google Colab : Analysis and ML Modelling, But, not for Web App. Develpoment
-2. Python Virtual Enviornment v3.8
+2. Python Virtual Enviornment v3.8 (Prefered)
 3. Python Libraries:
 - Pandas (Data Manipulation)
 - NLTK (Text Preprocessing)
 - Matplotlib (Data Visualization)
 - Scikit-learn (Machine Learning Model)
 - Streamlit (Web Application)
+- Wordcloud (Text Visualization)
+- Plotly (Interactive Visualization)
+- Joblib (Model and Vectorizer Pickling/Unpickling)
+- MySQL Connection Python (Database Connection) (*Optional)
 
 ## Step By Step Project Overview:
 1. Setup your 'venv', 'setup.py' file and 'requirements.txt' file.
 2. Create a 'notebooks' folder which consist your all analysis and predict model stuff.
 3. Perform EDA on your dataset (spam.csv): exploration, text preprocessing, visualization and at last save your cleaned or preprocessed dataset in data folder.
 4. Perform model training on your 'cleaned dataset' like: data spliting, vectorization using tf-idf, training and evaluating different models, selecting best performing model based on 'accuracy score', perform model test on unseen or new data and at the last save final best model 'model.pkl' file and vectorizer 'tfidf.pkl' file in artifact folder.
+5. Create streamlit web application with different pages (multi-page web application):
+- Home Page: Project Introduction, Objective, Tools & Tech. etc.
+- Exploration Page: Data Analysis, Visualization and Conclusion.
+- Prediction Page: SMS Classifier
+6. (Optional) You can store the user input text data from prediction page to your MySQL database for further improvement of model. Although, I just deployed the prediction part, not data storage in database. But, code for performing data storage in database is given in the Prediction.py file.
+7. Finally, I prototype project for "Spam Classification" is completed. Please, give your feedback and explore my project from my GitHub.
 
 ## Contact
 - LinkedIn : https://www.linkedin.com/in/anubhav-yadav-srm/
