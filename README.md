@@ -54,6 +54,9 @@ This corpus has been collected from free or free for research sources at the Int
 6. (Optional) You can store the user input text data from prediction page to your MySQL database for further improvement of model. Although, I just deployed the prediction part, not data storage in database. But, code for performing data storage in database is given in the Prediction.py file.
 7. Finally, I prototype project for "Spam Classification" is completed. Please, give your feedback and explore my project from my GitHub.
 
+## Web Application (Streamlit App)
+Link: https://spam-classification-project.streamlit.app/
+
 ## Contact
 - LinkedIn : https://www.linkedin.com/in/anubhav-yadav-srm/
 - Email : anubhavyadav77ff@gmail.com
